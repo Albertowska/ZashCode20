@@ -2,15 +2,20 @@ package com.google.zashcode.model;
 
 public class Book {
 
-    private String id;
+    private int id;
 
     private int score;
 
-    public void setId(String id) {
+    public Book(int id, int score) {
+        this.id = id;
+        this.score = score;
+    }
+
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

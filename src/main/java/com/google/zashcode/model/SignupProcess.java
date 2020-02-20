@@ -12,6 +12,12 @@ public class SignupProcess {
 
     private List<Book> bookCollection;
 
+    private int bookCollectionCount;
+
+    private int libraryCount;
+
+    private int maxProcessDays;
+
     public List<Library> getLibraryList() {
         return libraryList;
     }
@@ -42,5 +48,29 @@ public class SignupProcess {
 
     public void setBookCollection(List<Book> bookCollection) {
         this.bookCollection = bookCollection;
+    }
+
+    public int getBookCollectionCount() {
+        return bookCollectionCount;
+    }
+
+    public void setBookCollectionCount(int bookCollectionCount) {
+        this.bookCollectionCount = bookCollectionCount;
+    }
+
+    public int getLibraryCount() {
+        return libraryCount;
+    }
+
+    public void setLibraryCount(int libraryCount) {
+        this.libraryCount = libraryCount;
+    }
+
+    public int getMaxProcessDays() {
+        return maxProcessDays;
+    }
+
+    public void setMaxProcessDays(int maxProcessDays) {
+        this.maxProcessDays = maxProcessDays;
     }
 }

@@ -21,10 +21,10 @@ public class Library {
 
     private int dailyThroughput;
 
-    public Library (int signUpDays, int dailyThroughput, List<Book> books){
+    public Library (int signUpDays, int dailyThroughput){
         this.signUpDays=signUpDays;
         this.dailyThroughput=dailyThroughput;
-        this.bookList=books;
+        this.bookList= new ArrayList<>();
         this.booksToProcess = new ArrayList<>();
     }
 
