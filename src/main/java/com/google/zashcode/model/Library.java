@@ -3,13 +3,15 @@ package com.google.zashcode.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
+public class Library implements Comparable<Library>{
 
   private int id;
 
   private int signUpDays;
 
   private List<Book> bookList;
+
+  private int initialBookPoints = -1;
 
   public List<Book> getBooksToProcess() {
     return booksToProcess;
@@ -56,6 +58,17 @@ public class Library {
     this.dailyThroughput = dailyThroughput;
   }
 
+
+  public int getLibraryPoints(){
+
+    if(initialBookPoints<0){
+      for (Book book : bookList) {
+        if(book.getNum()>1)continue;
+        initialBookPoints = initialBookPoints + book.getScore();
+      }
+    }
+    return initialBookPoints;
+  }
   @Override
   public String toString() {
     String libraryString = id + " " + booksToProcess.size() + "\n";
@@ -63,5 +76,18 @@ public class Library {
       libraryString = libraryString.concat(String.valueOf(book.getId()) + " ");
     }
     return libraryString;
+  }
+
+  @Override
+  public int compareTo(Library comparelib) {
+
+    if(getLibraryPoints()>comparelib.getLibraryPoints()){
+      return -1;
+    }else if (getLibraryPoints()<comparelib.getLibraryPoints()){
+      return 1;
+    }else{
+      return 0;
+    }
+
   }
 }
