@@ -21,7 +21,7 @@ public class DataLoader {
     this.docName = docName;
   }
 
-  public List<Picture> getSlideShow() throws IOException {
+  public List<Picture> getLibraries() throws IOException {
 
     List<String> lines = Files.readAllLines(Paths.get(filePath.concat(docName)));
 
