@@ -1,5 +1,6 @@
 package com.google.zashcode;
 
+import com.google.zashcode.model.Library;
 import com.google.zashcode.model.Slide;
 import com.google.zashcode.model.Slideshow;
 
@@ -11,14 +12,12 @@ import java.util.List;
 
 public class DataOutput {
 
-    public static void write(String file, Slideshow slideshow) {
-        List<Slide> slideList = slideshow.getSlides();
-
+    public static void write(String file, List<Library> libraryList) {
         List<String> lines = new ArrayList<>();
-        lines.add("" + slideList.size());
+        lines.add("" + libraryList.size());
 
-        for (Slide slide : slideshow.getSlides()) {
-            lines.add(slide.toString());
+        for (Library library : libraryList) {
+            lines.add(library.toString());
         }
 
         try {
@@ -28,5 +27,4 @@ public class DataOutput {
             e.printStackTrace();
         }
     }
-
 }

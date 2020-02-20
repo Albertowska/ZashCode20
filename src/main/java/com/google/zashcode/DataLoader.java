@@ -41,12 +41,13 @@ public class DataLoader {
 
     lines.remove(0);
     Library library = null;
+    int libraryCount = 0;
     for(int i=0;i<lines.size();i=i+2){
 
       String line1 = lines.get(i);
       String[] libraryLine = line1.split(" ");
 
-      library = new Library(Integer.valueOf(libraryLine[1]), Integer.valueOf(libraryLine[2]));
+      library = new Library(libraryCount++,Integer.valueOf(libraryLine[1]), Integer.valueOf(libraryLine[2]));
       String line2 = lines.get(i+1);
       String[] booksLine = line2.split(" ");
       List<String> bookssss = Arrays.asList(booksLine);
