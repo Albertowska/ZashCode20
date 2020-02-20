@@ -67,7 +67,7 @@ public class Library implements Comparable<Library>{
         initialBookPoints = initialBookPoints + book.getScore();
       }
     }
-    return initialBookPoints;
+    return initialBookPoints / signUpDays;
   }
   @Override
   public String toString() {
@@ -80,14 +80,12 @@ public class Library implements Comparable<Library>{
 
   @Override
   public int compareTo(Library comparelib) {
-
-    if(getLibraryPoints()>comparelib.getLibraryPoints()){
+    if(getLibraryPoints() > comparelib.getLibraryPoints()){
       return -1;
-    }else if (getLibraryPoints()<comparelib.getLibraryPoints()){
+    }else if (getLibraryPoints() < comparelib.getLibraryPoints()){
       return 1;
     }else{
       return 0;
     }
-
   }
 }
