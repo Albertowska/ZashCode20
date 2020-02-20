@@ -1,5 +1,7 @@
 package com.google.zashcode.model;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +20,12 @@ public class SignupProcess {
     private int libraryCount;
 
     private int maxProcessDays;
+
+    public SignupProcess(){
+        libraryList = new ArrayList<>();
+        librariesToProcess = new ArrayList<>();
+        bookCollection = new HashMap<>();
+    }
 
     public List<Library> getLibraryList() {
         return libraryList;

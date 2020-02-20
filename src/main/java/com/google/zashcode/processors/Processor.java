@@ -1,17 +1,8 @@
 package com.google.zashcode.processors;
 
-import com.google.zashcode.Utils;
-import com.google.zashcode.model.Picture;
-import com.google.zashcode.model.Slide;
-import com.google.zashcode.model.Slideshow;
+public class Processor implements MagicProcessor {
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class Processor implements MagicProcessor{
-
-    public Slideshow process(List<Picture> pictureList) {
+    /*public Slideshow process(List<Picture> pictureList) {
         List<Slide> slideList = new ArrayList<>();
 
         Picture lastVerticalPicture = null;
@@ -33,5 +24,5 @@ public class Processor implements MagicProcessor{
 
         }
         return new Slideshow(slideList);
-    }
+    }*/
 }
