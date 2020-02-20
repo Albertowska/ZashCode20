@@ -52,6 +52,8 @@ public class DataLoader {
       if(line1.length()<1) break;
 
       library = new Library(libraryCount++,Integer.valueOf(libraryLine[1]), Integer.valueOf(libraryLine[2]));
+
+      library.setMaxProcessingDays(process.getMaxProcessDays());
       String line2 = lines.get(i+1);
       String[] booksLine = line2.split(" ");
       List<String> booksForLibrary = Arrays.asList(booksLine);
