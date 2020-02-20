@@ -5,52 +5,60 @@ import java.util.List;
 
 public class Library {
 
-    private int signUpDays;
+  private int id;
 
-    private List<Book> bookList;
+  private int signUpDays;
 
-    public List<Book> getBooksToProcess() {
-        return booksToProcess;
-    }
+  private List<Book> bookList;
 
-    public void setBooksToProcess(List<Book> booksToProcess) {
-        this.booksToProcess = booksToProcess;
-    }
+  public List<Book> getBooksToProcess() {
+    return booksToProcess;
+  }
 
-    private List<Book> booksToProcess;
+  public void setBooksToProcess(List<Book> booksToProcess) {
+    this.booksToProcess = booksToProcess;
+  }
 
-    private int dailyThroughput;
+  private List<Book> booksToProcess;
 
-    public Library (int signUpDays, int dailyThroughput, List<Book> books){
-        this.signUpDays=signUpDays;
-        this.dailyThroughput=dailyThroughput;
-        this.bookList=books;
-        this.booksToProcess = new ArrayList<>();
-    }
+  private int dailyThroughput;
 
-    public int getSignUpDays() {
-        return signUpDays;
-    }
+  public Library(int id, int signUpDays, int dailyThroughput, List<Book> books) {
+    this.id = id;
+    this.signUpDays = signUpDays;
+    this.dailyThroughput = dailyThroughput;
+    this.bookList = books;
+    this.booksToProcess = new ArrayList<>();
+  }
 
-    public void setSignUpDays(int signUpDays) {
-        this.signUpDays = signUpDays;
-    }
+  public int getSignUpDays() {
+    return signUpDays;
+  }
 
-    public List<Book> getBookList() {
-        return bookList;
-    }
+  public void setSignUpDays(int signUpDays) {
+    this.signUpDays = signUpDays;
+  }
 
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
-    }
+  public List<Book> getBookList() {
+    return bookList;
+  }
 
-    public int getDailyThroughput() {
-        return dailyThroughput;
-    }
+  public void setBookList(List<Book> bookList) {
+    this.bookList = bookList;
+  }
 
-    public void setDailyThroughput(int dailyThroughput) {
-        this.dailyThroughput = dailyThroughput;
-    }
+  public int getDailyThroughput() {
+    return dailyThroughput;
+  }
 
+  public void setDailyThroughput(int dailyThroughput) {
+    this.dailyThroughput = dailyThroughput;
+  }
 
+  @Override
+  public String toString() {
+    String libraryString = id + " " + booksToProcess.size() + "\n";
+    booksToProcess.forEach(book -> libraryString.concat(book.getId()));
+    return libraryString;
+  }
 }
