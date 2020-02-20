@@ -5,6 +5,7 @@ import com.google.zashcode.processors.MagicProcessor;
 import com.google.zashcode.processors.Processor;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -13,11 +14,24 @@ public class Application {
 
     System.out.println("Wer are Acquisition Hackers!!!");
 
-    SignupProcess process = new DataLoader("a_example.txt").getProcess();
+    System.out.println("Processing a_example");
 
-    MagicProcessor processor = new Processor();
+    List<String> filesToProcess = new ArrayList<>();
+    filesToProcess.add("a_example.txt");
+    filesToProcess.add("b_read_on.txt");
+    filesToProcess.add("c_incunabula.txt");
+    filesToProcess.add("d_tough_choices.txt");
+    filesToProcess.add("e_so_many_books.txt");
+    filesToProcess.add("f_libraries_of_the_world.txt");
 
-    processor.process(process);
+   for(String file: filesToProcess){
+     System.out.println(file);
+     SignupProcess process = new DataLoader("a_example.txt").getProcess();
+     new Processor().process(process);
+
+   }
+
+
 
   }
 
