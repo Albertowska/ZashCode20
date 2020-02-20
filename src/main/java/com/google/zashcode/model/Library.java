@@ -11,7 +11,7 @@ public class Library implements Comparable<Library>{
 
   private List<Book> bookList;
 
-  private int initialBookPoints = -1;
+  private int libraryPoints = 0;
 
   public List<Book> getBooksToProcess() {
     return booksToProcess;
@@ -60,15 +60,16 @@ public class Library implements Comparable<Library>{
 
 
   public int getLibraryPoints(){
-
-    if(initialBookPoints<0){
-      for (Book book : bookList) {
-        if(book.getNum()>1)continue;
-        initialBookPoints = initialBookPoints + book.getScore();
-      }
-    }
-    return initialBookPoints / signUpDays;
+    return libraryPoints / signUpDays;
   }
+
+  public void setLibraryPoints(){
+    libraryPoints = 0;
+    for (Book book : bookList) {
+      libraryPoints = libraryPoints + book.getScore();
+    }
+  }
+
   @Override
   public String toString() {
     String libraryString = id + " " + booksToProcess.size() + "\n";
