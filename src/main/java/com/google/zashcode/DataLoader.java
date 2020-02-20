@@ -56,7 +56,9 @@ public class DataLoader {
       String[] booksLine = line2.split(" ");
       List<String> booksForLibrary = Arrays.asList(booksLine);
       for(String bookIdAux: booksForLibrary){
-        library.getBookList().add(process.getBookCollection().get(Integer.valueOf(bookIdAux)));
+        Book tempBook = process.getBookCollection().get(Integer.valueOf(bookIdAux));
+        library.getBookList().add(tempBook);
+        tempBook.count();
       }
 
       process.getLibraryList().add(library);

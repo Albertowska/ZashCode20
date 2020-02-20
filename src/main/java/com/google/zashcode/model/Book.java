@@ -6,9 +6,12 @@ public class Book {
 
     private int score;
 
+    private int num;
+
     public Book(int id, int score) {
         this.id = id;
         this.score = score;
+        this.num = 0;
     }
 
     public void setId(int id) {
@@ -26,4 +29,13 @@ public class Book {
     public void setScore(int score) {
         this.score = score;
     }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void count() {
+        this.num++;
+    }
+
 }
