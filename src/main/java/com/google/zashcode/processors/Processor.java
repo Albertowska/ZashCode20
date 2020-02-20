@@ -18,6 +18,6 @@ public class Processor implements MagicProcessor {
 
 
     private void generateResult(SignupProcess process){
-        DataOutput.write("result_"+process.getFilename(),process.getLibrariesToProcess());
+        DataOutput.write(process.getFilename().split("\\.")[0], process.getLibrariesToProcess());
     }
 }

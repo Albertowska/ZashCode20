@@ -59,7 +59,9 @@ public class Library {
   @Override
   public String toString() {
     String libraryString = id + " " + booksToProcess.size() + "\n";
-    booksToProcess.forEach(book -> libraryString.concat(String.valueOf(book.getId())));
+    for(Book book : booksToProcess){
+      libraryString = libraryString.concat(String.valueOf(book.getId()) + " ");
+    }
     return libraryString;
   }
 }
