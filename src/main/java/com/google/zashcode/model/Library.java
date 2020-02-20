@@ -13,6 +13,8 @@ public class Library implements Comparable<Library>{
 
   private int libraryPoints = 0;
 
+  private int maxProcessingDays = 0;
+
   public List<Book> getBooksToProcess() {
     return booksToProcess;
   }
@@ -88,5 +90,13 @@ public class Library implements Comparable<Library>{
     }else{
       return 0;
     }
+  }
+
+  public int getMaxProcessingDays() {
+    return maxProcessingDays;
+  }
+
+  public void setMaxProcessingDays(int maxProcessingDays) {
+    this.maxProcessingDays = maxProcessingDays;
   }
 }
