@@ -1,5 +1,6 @@
 package com.google.zashcode;
 
+import com.google.zashcode.model.Library;
 import com.google.zashcode.model.Picture;
 
 import java.io.IOException;
@@ -21,31 +22,10 @@ public class DataLoader {
     this.docName = docName;
   }
 
-  public List<Picture> getLibraries() throws IOException {
+  public List<Library> getLibraries() throws IOException {
 
     List<String> lines = Files.readAllLines(Paths.get(filePath.concat(docName)));
 
-    List<Picture> pictures = new ArrayList<Picture>();
-
-    lines.remove(0);
-
-    Set<String> tagList;
-    boolean horizontal;
-    int pictureId = 0;
-    for (String pictureLine : lines) {
-      String[] arrayLine = pictureLine.split(" ");
-
-      horizontal = arrayLine[0].equals("H") ? true : false;
-      int numTags = Integer.parseInt(arrayLine[1]);
-      tagList = new HashSet<String>();
-      for (int i = 2; i < arrayLine.length; i++) {
-        tagList.add(arrayLine[i]);
-      }
-      pictures.add(new Picture(pictureId, horizontal, tagList));
-      pictureId++;
-    }
-
-    return pictures;
   }
 
 
