@@ -15,6 +15,7 @@ public class AlbertoProcessor implements MagicProcessor {
   public void process(SignupProcess process) throws InterruptedException {
 
     // Order libraries
+    process.getLibraryList().forEach(library -> library.setLibraryPoints());
     Collections.sort(process.getLibraryList());
 
     Library libraryOnSignup = null;
@@ -25,6 +26,9 @@ public class AlbertoProcessor implements MagicProcessor {
         if(libraryOnSignup != null){
           process.getLibrariesToProcess().add(libraryOnSignup);
         }
+
+        process.getLibraryList().forEach(library -> library.setLibraryPoints());
+        Collections.sort(process.getLibraryList());
 
         // Add library
         if(process.getLibraryList().size() > 0) {
@@ -40,6 +44,7 @@ public class AlbertoProcessor implements MagicProcessor {
 
       // Add books
       for (Library library : process.getLibrariesToProcess()) {
+        Collections.sort(library.getBookList());
         for (int numBook = 0; numBook < library.getDailyThroughput(); numBook++) {
           addFirstNBooks(library);
         }
@@ -53,6 +58,7 @@ public class AlbertoProcessor implements MagicProcessor {
     if(library.getBookList().size() > 0) {
       // Select best book
       Book book = library.getBookList().get(0);
+      book.setScore(0);
       library.getBooksToProcess().add(book);
       library.getBookList().remove(0);
     }
