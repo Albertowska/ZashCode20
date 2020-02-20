@@ -1,6 +1,6 @@
 package com.google.zashcode.model;
 
-public class Book {
+public class Book implements Comparable<Book>{
 
     private int id;
 
@@ -38,4 +38,14 @@ public class Book {
         this.num++;
     }
 
+    @Override
+    public int compareTo(Book book) {
+        if(getScore()>book.getScore()){
+            return -1;
+        }else if (getScore()<book.getScore()){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
 }
