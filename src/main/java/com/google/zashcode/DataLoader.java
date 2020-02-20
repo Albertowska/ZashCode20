@@ -36,7 +36,8 @@ public class DataLoader {
     String[] books = lines.get(0).split(" ");
     int bookId = 0;
     for(String book: books){
-      process.getBookCollection().add(new Book(bookId++,Integer.valueOf(book)));
+      process.getBookCollection().put(bookId, new Book(bookId,Integer.valueOf(book)));
+      bookId++;
     }
 
     lines.remove(0);
@@ -50,9 +51,9 @@ public class DataLoader {
       library = new Library(libraryCount++,Integer.valueOf(libraryLine[1]), Integer.valueOf(libraryLine[2]));
       String line2 = lines.get(i+1);
       String[] booksLine = line2.split(" ");
-      List<String> bookssss = Arrays.asList(booksLine);
-      for(String bookIdAux: bookssss){
-        library.getBookList().add(new Book(Integer.valueOf(bookIdAux),0));
+      List<String> booksForLibrary = Arrays.asList(booksLine);
+      for(String bookIdAux: booksForLibrary){
+        library.getBookList().add(process.getBookCollection().get(Integer.valueOf(bookIdAux)));
       }
 
       process.getLibraryList().add(library);

@@ -1,6 +1,7 @@
 package com.google.zashcode.model;
 
 import java.util.List;
+import java.util.Map;
 
 public class SignupProcess {
 
@@ -10,7 +11,7 @@ public class SignupProcess {
 
     private int timeline;
 
-    private List<Book> bookCollection;
+    private Map<Integer, Book> bookCollection;
 
     private int bookCollectionCount;
 
@@ -42,11 +43,11 @@ public class SignupProcess {
         this.timeline = timeline;
     }
 
-    public List<Book> getBookCollection() {
+    public Map<Integer, Book> getBookCollection() {
         return bookCollection;
     }
 
-    public void setBookCollection(List<Book> bookCollection) {
+    public void setBookCollection(Map<Integer, Book> bookCollection) {
         this.bookCollection = bookCollection;
     }
 
