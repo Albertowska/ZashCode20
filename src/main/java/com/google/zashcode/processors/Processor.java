@@ -1,28 +1,20 @@
 package com.google.zashcode.processors;
 
+import com.google.zashcode.DataOutput;
+import com.google.zashcode.model.SignupProcess;
+
 public class Processor implements MagicProcessor {
 
-    /*public Slideshow process(List<Picture> pictureList) {
-        List<Slide> slideList = new ArrayList<>();
 
-        Picture lastVerticalPicture = null;
+    @Override
+    public void process(SignupProcess process) throws InterruptedException {
+        process.getLibraryList();
+        process.setLibrariesToProcess(process.getLibraryList());
+        generateResult(process);
+    }
 
-        for (Picture picture : pictureList) {
 
-            if (picture.isHorizontal()) {
-
-                slideList.add(new Slide(picture));
-            } else { // vertical
-
-                if (lastVerticalPicture != null) {
-                    slideList.add(new Slide(lastVerticalPicture, picture));
-                    lastVerticalPicture = null;
-                } else {
-                    lastVerticalPicture = picture;
-                }
-            }
-
-        }
-        return new Slideshow(slideList);
-    }*/
+    private void generateResult(SignupProcess process){
+        DataOutput.write("result_"+process.getFilename(),process.getLibrariesToProcess());
+    }
 }

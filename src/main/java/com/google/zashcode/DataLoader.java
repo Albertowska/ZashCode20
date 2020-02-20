@@ -26,6 +26,8 @@ public class DataLoader {
 
     SignupProcess process = new SignupProcess();
 
+    process.setFilename(this.docName);
+
     String[] values = lines.get(0).split(" ");
     process.setBookCollectionCount(Integer.valueOf(values[0]));
     process.setLibraryCount(Integer.valueOf(values[1]));

@@ -7,6 +7,8 @@ import java.util.Map;
 
 public class SignupProcess {
 
+    private String filename;
+
     private List<Library> libraryList;
 
     private List<Library> librariesToProcess;
@@ -81,5 +83,13 @@ public class SignupProcess {
 
     public void setMaxProcessDays(int maxProcessDays) {
         this.maxProcessDays = maxProcessDays;
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 }

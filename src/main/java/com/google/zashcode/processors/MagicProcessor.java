@@ -1,6 +1,8 @@
 package com.google.zashcode.processors;
 
+import com.google.zashcode.model.SignupProcess;
+
 public interface MagicProcessor {
 
-  // Slideshow process(List<Picture> pictures) throws InterruptedException;
+  void process(SignupProcess process) throws InterruptedException;
 }
