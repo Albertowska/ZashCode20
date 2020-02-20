@@ -49,6 +49,7 @@ public class DataLoader {
 
       String line1 = lines.get(i);
       String[] libraryLine = line1.split(" ");
+      if(line1.length()<1) break;
 
       library = new Library(libraryCount++,Integer.valueOf(libraryLine[1]), Integer.valueOf(libraryLine[2]));
       String line2 = lines.get(i+1);

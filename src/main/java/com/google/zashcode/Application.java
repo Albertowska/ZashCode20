@@ -26,7 +26,7 @@ public class Application {
 
    for(String file: filesToProcess){
      System.out.println(file);
-     SignupProcess process = new DataLoader("a_example.txt").getProcess();
+     SignupProcess process = new DataLoader(file).getProcess();
      new Processor().process(process);
 
    }
